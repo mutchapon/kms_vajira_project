@@ -1,0 +1,4 @@
+defaultProject: yip-poc-nmu-vajira-hospital
+defaultDataset: dataform
+defaultAssertionDataset: dataform_assertions
+dataformCoreVersion: 3.0.26
