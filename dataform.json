@@ -1,0 +1,9 @@
+{
+  "warehouse": "bigquery",
+  "defaultSchema": "vajira_dataset",
+  "assertionSchema": "assertions",
+  "projectConfigVersion": "1",
+  "assertion": {
+    "enabled": true
+  }
+}

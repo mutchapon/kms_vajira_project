@@ -1,0 +1,17 @@
+config {
+  type: "operation"
+}
+
+-- Import dek
+${include("includes/dek.sqlx")}
+
+-- INSERT INTO ${defaultSchema()}.users_encrypted (user_id, name, ssn)
+SELECT
+  patient_id,
+  first_name,
+  last_name,
+  TO_BASE64(DETERMINISTIC_ENCRYPT(dek, CAST(citizen_id AS BYTES), b'')) AS citizen_id_enc,
+  insurance_type,
+  insurance_name,
+  start_date
+FROM ${defaultSchema()}.vajira_patient_raw;
